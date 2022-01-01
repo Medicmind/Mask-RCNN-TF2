@@ -1,4 +1,19 @@
-# Mask R-CNN for Object Detection and Segmentation using TensorFlow 2.0
+# Mask R-CNN for Object Detection and Segmentation using TensorFlow 2.0 including quantization
+
+Modified ahmedfgad Mask-RCNN repository so that kangaroo models and can be quantized and used.
+
+First train the kangaroo model as described in the respitory below and should create a 'Kangaro_mask_rcnn_trained.h5' file
+
+Then run 
+`python kangaroo_freeze.py`
+
+which should generate a kangaroo.tflite file
+
+To use the kangaroo.tflite file run
+
+`python kangaroo_predictionfreeze.py`
+
+which will infer from an image sample2.jpg 
 
 The [Mask-RCNN-TF2](https://github.com/ahmedfgad/Mask-RCNN-TF2) project edits the original [Mask_RCNN](https://github.com/matterport/Mask_RCNN) project, which only supports TensorFlow 1.0, so that it works on TensorFlow 2.0. Based on this new project, the [Mask R-CNN](https://arxiv.org/abs/1703.06870) can be trained and tested (i.e make predictions) in TensorFlow 2.0. The Mask R-CNN model generates bounding boxes and segmentation masks for each instance of an object in the image. It's based on Feature Pyramid Network (FPN) and a ResNet101 backbone.
 
